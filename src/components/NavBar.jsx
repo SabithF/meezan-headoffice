@@ -1,181 +1,76 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
+import logo from "../assets/logo/group-logo.png";
 
 function NavBar() {
     const [isNavOpen, setIsNavOpen] = useState(false);
-    const navRef = useRef(null);
-
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-
+    const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
-        function handleClickOutside(event) {
-            if (navRef.current && !navRef.current.contains(event.target)) {
-                setIsNavOpen(false); // Close nav
-            }
-        }
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 30);
+        };
 
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     return (
+        <nav className={`fixed top-0  left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300
+            ${scrolled 
+                ? "bg-white/20 backdrop-blur-sm shadow-xl rounded-xl px-6 py-2 top-6 w-[90%] md:w-[80%] text-gray-900"
+                : "w-full  left-0 bg-white/20 backdrop-blur-sm text-white px-4 py-3"
+            }`}
+        >
+            <div className="flex items-center justify-between max-w-screen-xl mx-auto">
+                <a href="/">
+                    <img src={logo} alt="Logo" className="w-20" />
+                </a>
 
+                <button
+                    onClick={() => setIsNavOpen(!isNavOpen)}
+                    className="md:hidden p-2 rounded"
+                >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d={
+                            isNavOpen 
+                                ? "M6 18L18 6M6 6l12 12"
+                                : "M4 6h16M4 12h16M4 18h16"
+                        } />
+                    </svg>
+                </button>
 
-        <>
-            <nav ref={navRef} className="fixed left-0 right-0   ">
-                <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen bg-gray-600/30 bg-opacity-50 z-40 py-2 px-10 hover:bg-opacity-70">
-                    <a href="">
-                        <img src="src\assets\logo\group-logo.png"
-                            alt="Logo"
-                            className="w-20 rtl:space-x-reverse" />
-                    </a>
-
-                    {/* Hamburger menu */}
-                    <button
-                        onClick={() => setIsNavOpen(!isNavOpen)}
-                        className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden focus:outline-none"
-                    >
-                        {isNavOpen ? (
-                            <svg
-                                className="w-5 h-5"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                viewBox="0 0 24 24"
+                <div className={`${isNavOpen ? "block" : "hidden"} md:flex md:items-center md:space-x-6 absolute md:static top-full left-3 right-0 w-full  md:w-auto bg-meezanGold/20 
+                md:bg-transparent text-sm font-semibold uppercase md:text-inherit p-4 md:p-0`}>
+                    <ul className="flex flex-col  md:flex-row space-y-6 md:space-y-0 md:space-x-4 md:text-slate-900">
+                        <li><a href="/" className="hover:text-[#f3cd8e]">Home</a></li>
+                        <li className="relative">
+                            <button
+                                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                                className="flex items-center hover:text-[#f3cd8e] uppercase"
                             >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M6 18L18 6M6 6l12 12"
-                                />
-                            </svg>
-                        ) : (
-                            <svg
-                                className="w-5 h-5"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M4 6h16M4 12h16M4 18h16"
-                                />
-                            </svg>
-                        )}
-                    </button>
-
-
-                    <div
-                        id="mega-menu-full"
-                        className={`uppercase font-outfitv ${isNavOpen ? "block" : "hidden"
-                            } absolute top-full left-0 w-full bg-gray-700/20 z-50 md:static md:flex md:w-auto md:order-1`}
-                    > <ul className="flex flex-col md:flex-row  p-3  ">
-
-                            <li>
-                                <a href="#"
-                                    className="block py-2 px-3 text-white rounded-sm                                
-                                 hover:hover:text-[#f3cd8e] " aria-current="page">Home</a>
-                            </li>
-                            <li className="relative">
-                                <button
-                                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                                    className="flex items-center justify-between w-full py-2 px-3 text-white rounded-sm hover:text-[#f3cd8e] uppercase"
-                                >
-                                    Our Presence
-                                    <svg className="w-2.5 h-2.5 ms-2.5" fill="none" viewBox="0 0 10 6">
-                                        <path
-                                            stroke="currentColor"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            d="m1 1 4 4 4-4"
-                                        />
-                                    </svg>
-                                </button>
-
-                                {/* Dropdown appears below the button */}
-                                <div
-                                    id="mega-menu-full-dropdown"
-                                    className={`${isDropdownOpen ? "block" : "hidden"
-                                        } absolute left-0 top-full mt-2 w-64 z-50 bg-gray-50/20 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 shadow-lg`}
-                                >
-                                    <ul className="p-4 text-gray-900 dark:text-white space-y-2">
-                                        <li>
-                                            <a
-                                                href="#"
-                                                className="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
-                                            >
-                                                <div className="font-semibold">Online Stores</div>
-                                                <span className="text-sm text-gray-500 dark:text-gray-400">
-                                                    Connect with third-party tools you're already using.
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a
-                                                href="#"
-                                                className="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
-                                            >
-                                                <div className="font-semibold">Online Stores</div>
-                                                <span className="text-sm text-gray-500 dark:text-gray-400">
-                                                    Connect with third-party tools you're already using.
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a
-                                                href="#"
-                                                className="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
-                                            >
-                                                <div className="font-semibold">Online Stores</div>
-                                                <span className="text-sm text-gray-500 dark:text-gray-400">
-                                                    Connect with third-party tools you're already using.
-                                                </span>
-                                            </a>
-                                        </li>
-                                        {/* Add more dropdown items if needed */}
+                                Our Presence
+                                <svg className="ml-2 w-3 h-3" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" strokeWidth="2" d="M1 1l4 4 4-4" />
+                                </svg>
+                            </button>
+                            {isDropdownOpen && (
+                                <div className="absolute top-full mt-2 bg-white text-black shadow-lg p-4 z-50 w-64">
+                                    <ul className="space-y-2 text-sm">
+                                        <li><a href="#">Plantations</a></li>
+                                        <li><a href="#">Hardware</a></li>
+                                        <li><a href="#">Hospitality</a></li>
                                     </ul>
                                 </div>
-                            </li>
-
-                            <li>
-                                <a href="#"
-                                    className="block py-2 px-3 text-white rounded-sm                                
-                                 hover:hover:text-[#f3cd8e] " aria-current="page">news</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    className="block py-2 px-3 text-white rounded-sm                                
-                                 hover:hover:text-[#f3cd8e] " aria-current="page">contact</a>
-                            </li>
-                        </ul>
-                    </div>
-
-
-
+                            )}
+                        </li>
+                        <li><a href="/news" className="hover:text-[#f3cd8e]">News</a></li>
+                        <li><a href="/contact" className="hover:text-[#f3cd8e]  bg-slate-900 p-3  text-white rounded-lg">Contact</a></li>
+                    </ul>
                 </div>
-
-
-
-
-            </nav >
-
-
-
-
-
-        </>
-
-
-
-
-
-
-
-    )
+            </div>
+        </nav>
+    );
 }
 
 export default NavBar;

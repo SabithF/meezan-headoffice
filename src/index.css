@@ -12,3 +12,16 @@
 html {
   scroll-behavior: smooth;
 }
+
+body{
+  @apply font-quicksand
+}
+
+/* * {
+  outline: 1px solid red;
+} */
+
+html,
+body {
+  overflow-x: hidden;
+}
