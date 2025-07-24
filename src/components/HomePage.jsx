@@ -1,6 +1,8 @@
 import React from "react";
 import NavBar from "./NavBar";
 import { styles } from "../styles";
+import chairImg from '../assets/img/IMG_7068A.jpg';
+import bgImg from '../assets/img/bung-02.jpg'
 
 function HomePage() {
     return (
@@ -10,7 +12,9 @@ function HomePage() {
             {/* Hero Section */}
             <section
                 id="hero"
-                className="relative min-h-screen w-full flex items-center justify-center bg-[url('src/assets/img/bung-02.jpg')] bg-cover bg-center overflow-hidden pt-16"
+                className="relative min-h-screen w-full flex items-center justify-center 
+                bg-[url('/assets/img/bung-02.jpg')] bg-cover bg-center overflow-hidden pt-16"
+                  style={{ backgroundImage: `url(${bgImg})` }}
             >
                 <div className="absolute inset-0 bg-slate-900/20 md:bg-slate-900/40 z-0"></div>
 
@@ -54,8 +58,10 @@ function HomePage() {
                 </div>
 
                 {/* Vision & Mission */}
-                <div className="relative h-screen bg-[url('src/assets/img/IMG_7068A.jpg')] 
-  bg-cover bg-center mt-10 bg-fixed rounded-lg flex justify-center items-center">
+                <div
+                    className="relative h-screen bg-cover bg-center mt-10 bg-fixed rounded-lg flex justify-center items-center"
+                    style={{ backgroundImage: `url(${chairImg})` }}
+                >
 
                     <div className="absolute inset-0 bg-black/70 z-0"></div>
 
@@ -69,12 +75,12 @@ function HomePage() {
                                 <span className="font-bold text-5xl text-meezanGold-light font-messiri  ">Vision</span>
                             </h2>
                             <p className="md:hidden mt-2 font-semibold text-left">
-                                
+
                                 Cultivate excellence and deliver value across our diverse portfolio,
                                 empowering progress in the communities we serve.
                             </p>
                             <p className="hidden md:block text-left md:text-right font-semibold text-xl opacity-0 md:group-hover:opacity-100 transition-opacity duration-700">
-                                
+
                                 Cultivate excellence and deliver value across our diverse portfolio,
                                 empowering progress in the communities we serve.
                             </p>
@@ -90,12 +96,12 @@ function HomePage() {
                                 <span className="font-bold text-5xl text-meezanGold-light font-messiri">Mission</span>
                             </h2>
                             <p className="md:hidden mt-2 font-semibold text-left">
-                               
+
                                 Be a dynamic and respected Sri Lankan conglomerate, renowned for our commitment
                                 to quality, innovation, and sustainable development.
                             </p>
                             <p className="hidden md:block text-left font-semibold text-xl opacity-0 md:group-hover:opacity-100 transition-opacity duration-700">
-                                
+
                                 Be a dynamic and respected Sri Lankan conglomerate, renowned for our commitment
                                 to quality, innovation, and sustainable development.
                             </p>
@@ -110,7 +116,9 @@ function HomePage() {
             </section>
 
             <section>
-                <div className="min-h-screen bg-green-100"></div>
+                <div className="min-h-screen bg-green-100">
+
+                </div>
             </section>
         </>
     );
