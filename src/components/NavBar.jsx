@@ -40,7 +40,7 @@ function NavBar() {
                     </svg>
                 </button>
 
-                <div className={`${isNavOpen ? "block" : "hidden"} md:flex md:items-center md:space-x-6 absolute md:static top-full left-3 right-0 w-full  md:w-auto bg-meezanGold/20 
+                <div className={`${isNavOpen ? "block" : "hidden"} md:flex md:items-center md:space-x-6 absolute md:static top-full left-0 rounded-xl mt-3 md:mt-0 w-full  md:w-auto bg-white 
                 md:bg-transparent text-sm font-semibold uppercase md:text-inherit p-4 md:p-0`}>
                     <ul className="flex flex-col  md:flex-row space-y-6 md:space-y-0 md:space-x-4 md:text-slate-900">
                         <li><a href="/" className="hover:text-[#f3cd8e]">Home</a></li>

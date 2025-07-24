@@ -116,7 +116,7 @@ function HomePage() {
             </section>
 
             <section>
-                <div className="min-h-screen bg-green-100">
+                <div className="min-h-screen ">
 
                 </div>
             </section>
