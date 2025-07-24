@@ -112,7 +112,7 @@ function HomePage() {
                     </div>
                     <div className="flex flex-col md:flex-row gap-4">
                         <div className="">
-                            <img src="src/assets/img/chair.jpg" alt="" className="rounded-lg shadow-xl h-50" />
+                            <img src="../assets/img/chair.jpg" alt="" className="rounded-lg shadow-xl h-50" />
                             <div className="hidden md:block">
                             <div className="font-urbanist font-semibold mt-3">Thank you</div>
                             <div className="font-urbanist font-semibold ">Ihithisham Meezan</div>
