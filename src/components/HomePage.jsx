@@ -1,8 +1,8 @@
 import React from "react";
 import NavBar from "./NavBar";
 import { styles } from "../styles";
-import chairImg from '../assets/img/IMG_7068A.jpg';
-import bgImg from '../assets/img/bung-02.jpg';
+import chairImg from '/assets/img/IMG_7068A.jpg';
+import bgImg from '/assets/img/bung-02.jpg';
 import { chairMansMEssage } from "../constants/text";
 
 function HomePage() {
@@ -112,7 +112,7 @@ function HomePage() {
                     </div>
                     <div className="flex flex-col md:flex-row gap-4">
                         <div className="">
-                            <img src="../assets/img/chair.jpg" alt="" className="rounded-lg shadow-xl h-50" />
+                            <img src="/assets/img/chair.jpg" alt="" className="rounded-lg shadow-xl h-50" />
                             <div className="hidden md:block">
                             <div className="font-urbanist font-semibold mt-3">Thank you</div>
                             <div className="font-urbanist font-semibold ">Ihithisham Meezan</div>
