@@ -22,6 +22,14 @@ export default {
           light: '#d5b874',
           dark: '#8c6e32',
         },
+        mzBlue: {
+          specialText: '#284b63',
+          headingText: '#778da9',
+          borderBl: '#e2d7ac'
+
+
+
+        }
       }
     },
   },
