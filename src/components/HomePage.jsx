@@ -5,6 +5,8 @@ import chairImg from '/assets/img/IMG_7068A.jpg';
 import bgImg from '/assets/img/bung-02.jpg';
 import { chairMansMEssage } from "../constants/text";
 import PortfolioCarousel from "./PortfolioCarousel";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 
 function HomePage() {
@@ -190,7 +192,7 @@ function HomePage() {
                 </div>
             </section>
 
-            {/* Image grid */}
+            {/* porfolio */}
             <section className="relative min-h-screen w-full bg-red-50/10 flex flex-col p-7 justify-center items-center  overflow-hidden">
 
                 <div className="absolute -bottom-40 md:bottom-0 bg-mzBlue-specialText left-0 w-full h-1/2 -z-10 overflow-y-hidden" />
@@ -217,6 +219,116 @@ function HomePage() {
 
 
             </section>
+
+            <section className="h-60 flex justify-center bg-blue-100/60 items-center text-center  ">
+
+                <div className={`${styles.heroHeadText} text-mzBlue-specialText text-3xl mx-3 drop-shadow-md`}>
+                   <h1 className=""> Integrity, Innovation, and Resilience</h1>
+                </div>
+
+
+            </section>
+
+            <section className="w-screen h-auto flex flex-col md:flex-row justify-center bg-fixed bg-cover items-center bg-[url(/assets/img/new-hero-img.png)]  ">
+
+                <div className="flex flex-col justify-center text-white px-16 md:px- py-36 w-full ">
+                    {/* <div className="absolute inset-1 bg-slate-900/40 md:bg-slate-900/40  z-0"></div> */}
+                    <p className="uppercase">Reach us </p>
+                    <h1 className="text-4xl font-black font-urbanist shadow-xl ">We are just <br /> one click away</h1>
+                    <div className="flex flex-row">
+                        <div className="w-10 h-30 ">
+                            {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" className="text-w"><path d="M192 64C156.7 64 128 92.7 128 128L128 512C128 547.3 156.7 576 192 576L448 576C483.3 576 512 547.3 512 512L512 128C512 92.7 483.3 64 448 64L192 64zM304 416L336 416C353.7 416 368 430.3 368 448L368 528L272 528L272 448C272 430.3 286.3 416 304 416zM224 176C224 167.2 231.2 160 240 160L272 160C280.8 160 288 167.2 288 176L288 208C288 216.8 280.8 224 272 224L240 224C231.2 224 224 216.8 224 208L224 176zM368 160L400 160C408.8 160 416 167.2 416 176L416 208C416 216.8 408.8 224 400 224L368 224C359.2 224 352 216.8 352 208L352 176C352 167.2 359.2 160 368 160zM224 304C224 295.2 231.2 288 240 288L272 288C280.8 288 288 295.2 288 304L288 336C288 344.8 280.8 352 272 352L240 352C231.2 352 224 344.8 224 336L224 304zM368 288L400 288C408.8 288 416 295.2 416 304L416 336C416 344.8 408.8 352 400 352L368 352C359.2 352 352 344.8 352 336L352 304C352 295.2 359.2 288 368 288z" /></svg> */}
+                        </div>
+
+                    </div>
+                </div>
+
+                <div className="flex justify-center items-center w-full bg-blue-200/20 backdrop-blur-sm ">
+                    <div className="py-8 lg:py-16 max-w-screen-md text-white md:w-96 w-screen mx-8 items-center" >
+
+                        <h2 className="font-bold text-xl pb-5 uppercase underline font-poppins">Contact form</h2>
+
+                        <form action="#" className="space-y-4 w-full  justify-center items-center">
+                            <div className=" ">
+                                <label for="email" className="block mb-2 text-md font-semibold ">
+                                    Your email
+                                </label>
+                                <input type="email" id="email" className="shadow-xl bg-gray-50/30 border border-gray-300 text-white  
+                                rounded-lg focus:ring-blue-900 focus:border-mzBlue-specialText w-full p-2 placeholder-white/50 font-medium
+                                " placeholder="your@email.com" required />
+                            </div>
+                            <div >
+                                <label for="email" className="block mb-2 text-md font-semibold ">
+                                    Subject
+                                </label>
+                                <input type="email" id="email" className="shadow-xl bg-gray-50/30 border border-gray-300 text-white font-medium 
+                                rounded-lg focus:ring-blue-900 focus:border-blue-200 w-full p-2 placeholder-white/50
+                                " placeholder="Let us know how we can help you..." required />
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label for="message" class="block mb-2 text-md font-semibold">Your message</label>
+                                <textarea id="message" rows="6" className="shadow-xl bg-gray-50/30 border border-gray-300 text-white font-medium 
+                                rounded-lg focus:ring-blue-900 focus:border-blue-200 w-full p-3 placeholder-white/50
+                                "  placeholder="Leave a comment..."></textarea>
+                            </div>
+
+                            <button type="submit" class="py-3 px-5 text-sm sm:w-fit hover:bg-blue-800/80 hover:backdrop-blur-sm focus:ring-4 border rounded-full focus:ring-primary-300  
+">Send message</button>
+
+
+                        </form>
+
+                    </div>
+                </div>
+
+
+
+            </section >
+
+            <footer className="bg-slate-800 text-white py-8 px-4 ">
+                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 justify-center">
+                    <div>
+                        <img
+                        src="/assets/img/meez-logo.png"
+                        alt="Logo"
+                        className="h-20 py-4 pr-3 flex justify-cen items-center md:pr-3"
+                    />
+                
+                        <p className="mt-2 text-sm text-gray-400">Brewing tradition. Building the future.</p>
+                    </div>
+                    <div>
+                        <h4 className="text-lg font-semibold">Quick Links</h4>
+                        <ul className="mt-2 space-y-1 text-sm text-gray-300">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about/story">The Meezan Story</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 className="text-lg font-semibold">Our Empire</h4>
+                        <ul className="mt-2 space-y-1 text-sm text-gray-300">
+                            
+                            <li><a href="/plantations">Plantations</a></li>
+                            <li><a href="/hardware">Tea Factory</a></li>
+                            <li><a href="/hardware">Hardware Division</a></li>
+                            <li><a href="/hardware">Hospitality</a></li>
+                            <li><a href="/hardware">Education</a></li>
+                            <li><a href="/hardware">Hospitality</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 className="text-lg font-semibold">Connect</h4>
+                        <p className="text-sm text-gray-400 mt-2">Sri Lanka</p>
+                        <p className="text-sm text-gray-400">Email: info@meezangroup.lk</p>
+                    </div>
+                </div>
+                <div className="text-center text-sm text-gray-500 mt-8">
+                    &copy; 2025 Meezan Group. All rights reserved.
+                </div>
+            </footer>
+        
+
+
         </>
     );
 }
