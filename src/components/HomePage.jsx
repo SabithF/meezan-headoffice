@@ -220,7 +220,7 @@ function HomePage() {
 
             </section>
 
-            <section className="h-60 flex justify-center bg-blue-100/60 items-center text-center  ">
+            <section className="h-60 flex justify-center  items-center text-center  ">
 
                 <div className={`${styles.heroHeadText} text-mzBlue-specialText text-3xl mx-3 drop-shadow-md`}>
                    <h1 className=""> Integrity, Innovation, and Resilience</h1>
